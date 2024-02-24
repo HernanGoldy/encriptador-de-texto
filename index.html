@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Encriptador de Texto</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="logo">
+        <img src="images/logo.svg" alt="Logo Alura" />
+      </header>
+      <section class="texto">
+        <div class="container-texto">
+          <textarea
+            class="ingreso-texto"
+            placeholder="Ingrese el texto aquí"
+            onkeydown="textoIngresado()"></textarea>
+          <button onclick="borrarTexto()" class="borrar btn">
+            <img src="images/papelera.svg" alt="Icono de una papelera" />
+          </button>
+        </div>
+
+        <div class="container-botones">
+          <div class="info">
+            <img src="images/info.svg" alt="Info icon" />
+            <p class="texto-info">Sólo letras minúsculas y sin acentos</p>
+          </div>
+          <div class="botones">
+            <button onclick="desencriptarMensaje()" class="encriptar btn">
+              Encriptar
+            </button>
+            <button
+              onclick="desencriptarMensaje('desencriptar')"
+              class="desencriptar btn azul-claro">
+              Desencriptar
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="mostrar" class="container-encriptado">
+        <div class="container-vacio visible">
+          <img
+            class="img-buscar"
+            src="images/persona.svg"
+            alt="Imagen de lupa" />
+          <p class="titulo-texto">Ningún texto fue encontrado</p>
+          <p class="texto-inicio">
+            Ingresa el texto que desees encriptar o desencriptar.
+          </p>
+        </div>
+        <div class="mostrar-texto">
+          <div
+            class="texto-encriptado"
+            placeholder="texto encriptado"
+            readonly></div>
+          <button onclick="copiarMensaje()" class="copiar btn azul-claro">
+            Copiar
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
